@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   card: StripeElement;
   @ViewChild('card') cardRef: ElementRef;
 
-  // optional parameters
   elementsOptions: ElementsOptions = {
     locale: 'en'
   };
@@ -31,7 +30,6 @@ export class AppComponent implements OnInit {
     this.stripeService.elements(this.elementsOptions)
       .subscribe(elements => {
         this.elements = elements;
-        // Only mount the element the first time
         if (!this.card) {
           this.card = this.elements.create('card', {
             style: {
@@ -59,8 +57,10 @@ export class AppComponent implements OnInit {
       .createToken(this.card, { name })
       .subscribe(result => {
         if (result.token) {
+          alert('Thank you!');
           console.log(result.token);
         } else if (result.error) {
+          alert('An error has occured. Please try again.');
           console.log(result.error.message);
         }
       });

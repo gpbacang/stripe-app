@@ -1,19 +1,18 @@
-<!-- <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
-  <input type="text" formControlName="name" placeholder="Jane Doe">
-  <div id="card-element" class="field" #card></div>
-  <button type="submit">
-    BUY
-  </button>
-</form> -->
-
 <div class="form-container">
-  <form class="ui form" [formGroup]="stripeTest">
+  <h2 class="ui icon header">
+    <i class="gift icon"></i>
+    <div class="content">
+      <span>Donate</span>
+      <div class="sub header">Lorem ipsum dolor sit amet.</div>
+    </div>
+  </h2>
+  <form class="ui form" [formGroup]="stripeTest" (ngSubmit)="buy($event)" novalidate>
     <div class="field">
       <input type="text" name="name" formControlName="name" placeholder="Name">
     </div>
     <div class="field">
       <div id="card-element" class="field" #card></div>
     </div>
-    <button class="ui primary button">Donate</button>
+    <button type="submit" class="ui primary button">Donate</button>
   </form>
 </div>

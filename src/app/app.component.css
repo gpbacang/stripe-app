@@ -4,13 +4,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .ui.form {
     width: 35%;
+    margin-top: 15px;
 }
 
 .ui.primary.button {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
+}
+
+.ui.icon.header {
+    display: flex;
+    flex-direction: row;
+    text-align: left !important;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    padding-top: 15px !important;
 }
